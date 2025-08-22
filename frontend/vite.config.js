@@ -11,4 +11,7 @@ export default defineConfig({
       "/api": "http://localhost:8000",
     }
   },
+  build: {
+    chunkSizeWarningLimit: 1500, // raise from 500 KB to 1.5 MB
+  },
 })
