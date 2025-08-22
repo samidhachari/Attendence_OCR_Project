@@ -26,8 +26,8 @@
 import axios from "axios";
 
 // Use env var if available, else default to local
-// const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000";
-const API_BASE = "https://attendence-ocr-project.onrender.com";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000";
+// const API_BASE = "https://attendence-ocr-project.onrender.com";
 
 const API = axios.create({
   baseURL: API_BASE,
