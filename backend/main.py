@@ -347,6 +347,10 @@ async def upload_file(file: UploadFile = File(...)):
         "type": file.content_type,
     }
 
+@app.get("/healthz")
+def health():
+    return {"status": "ok"}
+
 # --- Process Endpoint ---
 @app.post("/process/{filename}")
 def process_image(filename: str):
