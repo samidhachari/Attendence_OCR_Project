@@ -74,6 +74,7 @@
 
 
 
+
 import React, { useState } from "react";
 import FileUpload from "./components/FileUpload";
 import DataTable from "./components/DataTable";
@@ -126,17 +127,15 @@ export default function App() {
           Image Data Extractor
         </h1>
 
-        <div className="flex flex-col items-center gap-4">
-          {/* Upload component now triggers auto-upload */}
-          <FileUpload onUpload={handleFileSelect} />
-
-          <button
-            onClick={handleProcess}
-            className="px-5 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 disabled:opacity-60"
-            disabled={!fileMeta?.filename || busy}
-          >
+        <div className="flex flex-col items-center gap-6">
+            <FileUpload onUpload={handleFileSelect} />
+            <button
+              onClick={handleProcess}
+              className="px-5 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 disabled:opacity-60"
+              disabled={!fileMeta?.filename || busy}
+            >
             {busy ? "Processing..." : "Process Image"}
-          </button>
+            </button>         
 
           {selectedFile && (
             <div className="text-gray-700 bg-gray-50 p-4 rounded-lg shadow-sm w-full mt-4">
@@ -161,6 +160,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 

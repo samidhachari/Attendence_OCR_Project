@@ -11,7 +11,7 @@ export default function FileUpload({ onUpload }) {
   };
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex flex-col items-center gap-3">
       <button
         onClick={() => inputRef.current?.click()}
         className="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700">
