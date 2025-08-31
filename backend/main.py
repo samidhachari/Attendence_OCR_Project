@@ -418,3 +418,6 @@ def process_image(filename: str):
 
     TABLES[filename] = rows
     return {"rows": rows}
+
+
+
