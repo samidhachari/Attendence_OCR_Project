@@ -1,85 +1,8 @@
-// import React, { useState } from "react";
-// import FileUpload from "./components/FileUpload.jsx";
-// import DataTable from "./components/DataTable.jsx";
-// import ExportButtons from "./components/ExportButtons.jsx";
-// import { uploadImage } from "./api.js";
-
-
-// export default function App() {
-//   const [rows, setRows] = useState([]);
-//   const [rawText, setRawText] = useState("");
-//   const [fileMeta, setFileMeta] = useState(null);
-//   const [savedName, setSavedName] = useState("");
-
-
-//   const handleUpload = async (file) => {
-//     setFileMeta({
-//       original_name: file.name,
-//       size_kb: (file.size / 1024).toFixed(1) + " KB",
-//       type: file.type || "unknown"
-//     });
-
-
-
-//     try {
-//       const res = await uploadImage(file);
-//       if (!res.ok) {
-//         alert("Upload error: " + (res.detail || "see console"));
-//         console.error(res);
-//         return;
-//       }
-
-//       setSavedName(res.file_meta?.saved_name || "");
-//       setRawText(res.text || "");
-//       setRows(res.data || []);
-//     } catch (e) {
-//       alert("Upload failed. Check backend is running and CORS. See console for details.");
-//       console.error(e);
-//     }
-//   };
-
-//   return (
-//     <div className="max-w-5xl mx-auto p-4">
-//       <h1 className="text-2xl font-semibold">Attendance OCR</h1>
-//       <p className="text-gray-600">Upload an attendance image → auto-extract → edit → export.</p>
-
-//       <div className="mt-4">
-//         <FileUpload onUpload={handleUpload} />
-//       </div>
-
-//       {fileMeta && (
-//         <div className="mt-3 text-sm text-gray-500">
-//           <div><strong>Original:</strong> {fileMeta.original_name}</div>
-//           <div><strong>Size:</strong> {fileMeta.size_kb}</div>
-//           <div><strong>Type:</strong> {fileMeta.type}</div>
-//           {savedName && <div><strong>Saved as:</strong> {savedName}</div>}
-//         </div>
-//       )}
-
-//       <DataTable rows={rows} setRows={setRows} />
-
-//       <ExportButtons rows={rows} />
-
-//       <details className="mt-6">
-//         <summary className="cursor-pointer text-sm text-gray-700">Show raw OCR text</summary>
-//         <pre className="mt-2 p-3 bg-white border rounded whitespace-pre-wrap text-xs">{rawText}</pre>
-//       </details>
-
-//       <footer class="mt-10 py-6 text-center text-gray-500 text-sm">
-//         © 2025 Task 2
-//       </footer>
-//     </div>
-//   );
-// }
-
-
-
 
 import React, { useState } from "react";
 import FileUpload from "./components/FileUpload";
 import DataTable from "./components/DataTable";
 import { uploadImage, processImage } from "./api";
-
 
 
 export default function App() {
@@ -143,9 +66,6 @@ export default function App() {
               <p><span className="font-medium">File Name:</span> {selectedFile.name}</p>
               <p><span className="font-medium">File Type:</span> {selectedFile.type}</p>
               <p><span className="font-medium">File Size:</span> {(selectedFile.size / 1024).toFixed(2)} KB</p>
-              {/* {fileMeta?.filename && (
-                <p className="text-sm text-green-700 mt-1">Uploaded as: {fileMeta.filename}</p>
-              )} */}
             </div>
           )}
         </div>
@@ -160,6 +80,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
