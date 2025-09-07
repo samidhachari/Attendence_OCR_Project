@@ -34,7 +34,6 @@
 #     return text, {}
 
 
-
 import os
 from typing import Tuple
 from PIL import Image, ImageOps, ImageFilter, ImageEnhance
