@@ -1,6 +1,3 @@
-
-
-
 # import os, json, logging, requests
 # from fastapi import FastAPI, UploadFile, File, HTTPException
 # from fastapi.middleware.cors import CORSMiddleware
@@ -249,5 +246,3 @@ def process_image(filename: str):
     TABLES[filename] = rows
 
     return {"rows": rows}
-
-

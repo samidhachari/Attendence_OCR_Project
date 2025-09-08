@@ -10,10 +10,8 @@ et_xmlfile==2.0.0
 fastapi==0.115.0
 h11==0.16.0
 idna==3.10
-numpy==1.26.4
 openpyxl==3.1.5
 packaging==25.0
-pandas==2.2.2
 pdfminer.six==20250506
 pdfplumber==0.11.7
 pillow==10.4.0
@@ -35,3 +33,5 @@ typing_extensions==4.14.1
 tzdata==2025.2
 urllib3==2.5.0
 uvicorn==0.30.6
+kraken-binarization==1.0.0
+kraken==4.2.0 

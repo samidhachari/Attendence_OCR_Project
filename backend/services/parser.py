@@ -1,7 +1,4 @@
 
-
-
-
 # import re
 # from datetime import datetime
 # from typing import List, Dict
@@ -261,5 +258,3 @@ def parse_text(text: str) -> List[Dict]:
             seen.add(key)
     
     return rows
-
-

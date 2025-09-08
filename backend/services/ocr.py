@@ -1,5 +1,4 @@
 
-
 # import os
 # from typing import Tuple
 # from PIL import Image, ImageOps, ImageFilter
@@ -128,4 +127,3 @@ def extract_text_from_image(image_path: str) -> Tuple[str, dict]:
         best_text = pytesseract.image_to_string(processed, config=r'--oem 3 --psm 6')
     
     return best_text, {"confidence": best_conf}
-
